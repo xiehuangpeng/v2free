@@ -69,13 +69,3 @@ jobs:
         do
           python3 check_in.py --username ${user_list[$i]} --password ${pwd_list[$i]}
         done
-    - name: Git 提交 Commit
-      run: |
-        git config --global user.email 3356136957@qq.com
-        git config --global user.name HelloTools-bot
-        git add .
-        git commit -m ":star: 签到成功" -a
-    - name: Git 提交到主仓库
-      uses: ad-m/github-push-action@master
-      with:
-        github_token: ${{ secrets.GITHUB_TOKEN }}
